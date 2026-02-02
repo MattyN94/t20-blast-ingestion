@@ -1,10 +1,3 @@
-import { createClient } from "@supabase/supabase-js";
-
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_KEY
-);
-
 export default async function handler(req, res) {
   const apiKey = process.env.CRICKET_API_KEY;
 
@@ -12,6 +5,9 @@ export default async function handler(req, res) {
     `https://api.cricapi.com/v1/cricScore?apikey=${apiKey}`
   );
   const json = await response.json();
+
+  console.log("API key present:", !!apiKey);
+  console.log("API response:", json);
 
   for (const match of json.data) {
     if (!match.series?.includes("Vitality")) continue;
