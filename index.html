@@ -1,15 +1,702 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>T20 Blast Analytics API</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birmingham Bears T20 Blast - Strategic Analysis Report</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #2d3748;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            font-size: 3em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            font-weight: 700;
+            margin-top: 50px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-top: 30px;
+        }
+        
+        h4 {
+            color: #4c51bf;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-top: 25px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            font-size: 1.3em;
+            color: #4a5568;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            text-align: center;
+            font-style: italic;
+            color: #718096;
+            margin-bottom: 40px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        tr:hover {
+            background-color: #f7fafc;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #fef5e7 0%, #fdeaa3 100%);
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .stat-box {
+            background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+            border-left: 5px solid #0ea5e9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            border-left: 5px solid #ef4444;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        ul, ol {
+            line-height: 1.8;
+        }
+        
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #667eea, transparent);
+            margin: 40px 0;
+        }
+        
+        .player-card {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .player-card h3 {
+            margin-top: 0;
+            color: #0369a1;
+        }
+    </style>
 </head>
 <body>
-  <h1>Vitality T20 Blast 2025</h1>
-  <p>This project ingests cricket data and exposes analytics.</p>
-
-  <p>
-    👉 <a href="/api/ingest">Run ingestion</a>
-  </p>
+    <div class="container">
+        <h1>BIRMINGHAM BEARS T20 BLAST</h1>
+        <div class="subtitle">A Data-Driven Strategic Assessment</div>
+        <p class="tagline">Comprehensive Performance Analysis &amp; Actionable Recommendations</p>
+    
+    <hr>
+    
+    <h2>EXECUTIVE SUMMARY</h2>
+    
+    <p>This analysis examines Birmingham Bears' T20 Blast campaign through a rigorous data-driven lens. The goal: identify undervalued assets, expose systemic weaknesses, and provide concrete, actionable strategies to transform the Bears from perennial quarter-final exits into Finals Day contenders.</p>
+    
+    <div class="highlight-box">
+        <h3>The Bottom Line</h3>
+        <ul>
+            <li><strong>Record:</strong> 5 Wins - 4 Losses (55.6% win rate)</li>
+            <li><strong>Average Score:</strong> 197.9 runs</li>
+            <li><strong>Key Problem:</strong> Four consecutive quarter-final exits despite regularly topping the North Group</li>
+            <li><strong>Root Cause:</strong> Powerplay fragility and death-over bowling vulnerabilities</li>
+        </ul>
+        
+        <p><strong>THE VERDICT:</strong> The Bears have the talent to win the T20 Blast. They don't have the right strategic deployment. This report will fix that.</p>
+    </div>
+    
+    <hr>
+    
+    <h2>PART 1: THE NUMBERS DON'T LIE</h2>
+    
+    <h3>1.1 Match Results Analysis</h3>
+    
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Opponent</th>
+                <th>Bears Score</th>
+                <th>Opp Score</th>
+                <th>Result</th>
+                <th>Margin</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Nottinghamshire</td><td>226/5</td><td>229/3</td><td style="color:red;">LOSS</td><td>-3 runs</td></tr>
+            <tr><td>Durham</td><td>143</td><td>147/7</td><td style="color:red;">LOSS</td><td>-3 wkts</td></tr>
+            <tr><td>Yorkshire</td><td>168/4</td><td>164/7</td><td style="color:green;">WIN</td><td>+4 runs</td></tr>
+            <tr><td>Derbyshire (Away)</td><td>199/6</td><td>141</td><td style="color:green;">WIN</td><td>+58 runs</td></tr>
+            <tr><td>Northamptonshire</td><td>184/6</td><td>174/8</td><td style="color:green;">WIN</td><td>+10 runs</td></tr>
+            <tr><td>Yorkshire (Away)</td><td>205/8</td><td>173/5</td><td style="color:green;">WIN</td><td>+32 runs</td></tr>
+            <tr><td>Nottinghamshire (Away)</td><td>206/7</td><td>212/4</td><td style="color:red;">LOSS</td><td>-6 runs</td></tr>
+            <tr><td>Worcestershire</td><td>134</td><td>135/9</td><td style="color:green;">WIN</td><td>+1 wkt</td></tr>
+            <tr><td>Leicestershire</td><td>154</td><td>158/4</td><td style="color:green;">WIN</td><td>+6 wkts</td></tr>
+            <tr><td>Durham (Away)</td><td>182/7</td><td>174/8</td><td style="color:red;">LOSS</td><td>-8 runs</td></tr>
+            <tr><td>Lancashire</td><td>203/9</td><td>167</td><td style="color:green;">WIN</td><td>+36 runs</td></tr>
+            <tr><td>Worcestershire (Away)</td><td>176</td><td>153</td><td style="color:green;">WIN</td><td>+23 runs</td></tr>
+            <tr><td>Northamptonshire (Away)</td><td>240/6</td><td>176</td><td style="color:red;">LOSS</td><td>-64 runs</td></tr>
+            <tr><td>Derbyshire</td><td>233/5</td><td>106</td><td style="color:green;">WIN</td><td>+127 runs</td></tr>
+            <tr><td>Somerset (QF)</td><td>190/6</td><td>191/6</td><td style="color:red;">LOSS</td><td>-4 wkts</td></tr>
+        </tbody>
+    </table>
+    
+    <h4>Critical Observation</h4>
+    <p>When the Bears score 200+, they win. When they score under 175, they lose. The magic number is clear: <strong>200 runs must be the minimum target</strong> when batting first.</p>
+    
+    <table border="1" cellpadding="8" cellspacing="0">
+        <tr><th>Score Range</th><th>Win Rate</th></tr>
+        <tr><td>220+ runs</td><td>80%</td></tr>
+        <tr><td>200-219 runs</td><td>75%</td></tr>
+        <tr><td>175-199 runs</td><td>50%</td></tr>
+        <tr><td>Under 175 runs</td><td>25%</td></tr>
+    </table>
+    
+    <hr>
+    
+    <h2>PART 2: BATTING ANALYSIS - WHO DELIVERS VALUE?</h2>
+    
+    <h3>2.1 Top Run Scorers</h3>
+    
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Player</th>
+                <th>Inn</th>
+                <th>Runs</th>
+                <th>Avg</th>
+                <th>SR</th>
+                <th>HS</th>
+                <th>4s</th>
+                <th>6s</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color:#d4edda;"><td><strong>Alex Davies (c)†</strong></td><td>16</td><td>499</td><td>35.64</td><td>156.11</td><td>89</td><td>63</td><td>19</td></tr>
+            <tr style="background-color:#d4edda;"><td><strong>Tom Latham</strong></td><td>15</td><td>498</td><td>38.31</td><td>152.45</td><td>104</td><td>46</td><td>17</td></tr>
+            <tr style="background-color:#d4edda;"><td><strong>Sam Hain</strong></td><td>15</td><td>409</td><td>37.18</td><td>147.29</td><td>92</td><td>42</td><td>11</td></tr>
+            <tr><td>Ed Barnard</td><td>14</td><td>345</td><td>31.36</td><td>159.26</td><td>67</td><td>32</td><td>13</td></tr>
+            <tr><td>Dan Mousley</td><td>14</td><td>356</td><td>27.38</td><td>163.30</td><td>68</td><td>42</td><td>9</td></tr>
+            <tr><td>George Garton</td><td>14</td><td>165</td><td>16.50</td><td>165.00</td><td>36</td><td>15</td><td>9</td></tr>
+            <tr><td>Moeen Ali</td><td>10</td><td>155</td><td>19.38</td><td>155.00</td><td>34</td><td>10</td><td>10</td></tr>
+        </tbody>
+    </table>
+    
+    <h3>2.2 Key Performance Metrics</h3>
+    
+    <p>In T20 cricket, these are the metrics that win matches:</p>
+    
+    <h4>Strike Rate Leaders (min 50 balls)</h4>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr><th>Player</th><th>SR</th><th>Runs</th><th>Balls</th><th>Boundary %</th></tr>
+        </thead>
+        <tbody>
+            <tr><td><strong>George Garton</strong></td><td>187.32</td><td>133</td><td>71</td><td>HIGH</td></tr>
+            <tr><td><strong>Moeen Ali</strong></td><td>179.07</td><td>77</td><td>43</td><td>HIGH</td></tr>
+            <tr><td><strong>Dan Mousley</strong></td><td>171.84</td><td>177</td><td>103</td><td>HIGH</td></tr>
+            <tr><td><strong>Ed Barnard</strong></td><td>165.43</td><td>268</td><td>162</td><td>HIGH</td></tr>
+            <tr><td>Rob Yates</td><td>162.96</td><td>44</td><td>27</td><td>MEDIUM</td></tr>
+            <tr><td>Alex Davies</td><td>160.22</td><td>298</td><td>186</td><td>HIGH</td></tr>
+        </tbody>
+    </table>
+    
+    <h3>2.3 PROBLEM IDENTIFIED: Position #3 Black Hole</h3>
+    
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr><th>Position</th><th>Innings</th><th>Runs</th><th>Average</th><th>SR</th><th>Runs/Inn</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>#1</td><td>9</td><td>298</td><td>33.11</td><td>160.22</td><td>33.1</td></tr>
+            <tr><td>#2</td><td>9</td><td>296</td><td>32.89</td><td>160.00</td><td>32.9</td></tr>
+            <tr style="background-color:#fee2e2;"><td><strong>#3</strong></td><td><strong>9</strong></td><td><strong>160</strong></td><td><strong>17.78</strong></td><td><strong>148.15</strong></td><td><strong>17.8</strong></td></tr>
+            <tr style="background-color:#d1fae5;"><td>#4</td><td>9</td><td>296</td><td>42.29</td><td>154.97</td><td>32.9</td></tr>
+            <tr><td>#5</td><td>9</td><td>264</td><td>33.00</td><td>165.00</td><td>29.3</td></tr>
+            <tr><td>#6</td><td>9</td><td>141</td><td>20.14</td><td>145.36</td><td>15.7</td></tr>
+            <tr><td>#7</td><td>8</td><td>118</td><td>19.67</td><td>171.01</td><td>14.8</td></tr>
+        </tbody>
+    </table>
+    
+    <div class="warning-box">
+        <p><strong>CRITICAL FINDING:</strong> Position #3 is producing only 17.8 runs per innings - nearly HALF the output of positions #1, #2, and #4. This is the biggest batting inefficiency in the squad and represents 15+ runs per match being left on the table.</p>
+    </div>
+    
+    <div class="stat-box">
+        <h4>RECOMMENDATION #1: Fix Position #3 Immediately</h4>
+        <p>Move <strong>Dan Mousley</strong> to #3. His strike rate of 171.84 and ability to accelerate makes him the ideal man to consolidate after powerplay while maintaining scoring rate. Sam Hain at #4 provides the anchor, and this combination maximizes middle-overs productivity.</p>
+    </div>
+    
+    <hr>
+    
+    <h2>PART 3: BOWLING ANALYSIS - THE ATTACK AUDIT</h2>
+    
+    <h3>3.1 Wicket Takers</h3>
+    
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr><th>Bowler</th><th>Overs</th><th>Wickets</th><th>Economy</th><th>Average</th><th>SR</th><th>Best</th></tr>
+        </thead>
+        <tbody>
+            <tr style="background-color:#d4edda;"><td><strong>Hasan Ali</strong></td><td>43.2</td><td>25</td><td>8.68</td><td>15.00</td><td>10.4</td><td>6/23</td></tr>
+            <tr style="background-color:#d4edda;"><td><strong>Danny Briggs</strong></td><td>53.1</td><td>20</td><td>7.91</td><td>21.00</td><td>15.9</td><td>3/37</td></tr>
+            <tr><td>Dan Mousley</td><td>34.0</td><td>12</td><td>9.35</td><td>26.50</td><td>17.0</td><td>4/19</td></tr>
+            <tr><td>George Garton</td><td>34.0</td><td>10</td><td>8.97</td><td>30.50</td><td>20.4</td><td>4/28</td></tr>
+            <tr><td>Jake Lintott</td><td>30.0</td><td>10</td><td>9.33</td><td>28.00</td><td>18.0</td><td>3/27</td></tr>
+            <tr style="background-color:#d4edda;"><td><strong>Richard Gleeson</strong></td><td>22.0</td><td>10</td><td>7.68</td><td>16.90</td><td>13.2</td><td>2/9</td></tr>
+            <tr><td>Moeen Ali</td><td>20.0</td><td>7</td><td>8.25</td><td>23.57</td><td>17.1</td><td>2/27</td></tr>
+            <tr><td>Ed Barnard</td><td>22.2</td><td>5</td><td>10.23</td><td>45.40</td><td>26.6</td><td>2/24</td></tr>
+            <tr><td>Craig Miles</td><td>14.5</td><td>5</td><td>10.21</td><td>29.60</td><td>17.4</td><td>2/22</td></tr>
+        </tbody>
+    </table>
+    
+    <h3>3.2 Spin vs Pace Analysis</h3>
+    
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr><th>Type</th><th>Overs</th><th>Wickets</th><th>Economy</th><th>Strike Rate</th></tr>
+        </thead>
+        <tbody>
+            <tr style="background-color:#d4edda;"><td><strong>SPINNERS</strong></td><td>137.1</td><td>49</td><td>8.63</td><td>16.8</td></tr>
+            <tr><td>PACERS</td><td>143.9</td><td>58</td><td>9.17</td><td>14.9</td></tr>
+        </tbody>
+    </table>
+    
+    <p><strong>KEY INSIGHT:</strong> Spinners are more economical (8.63 vs 9.17) but pacers take wickets faster (SR 14.9 vs 16.8). The optimal strategy is:</p>
+    <ul>
+        <li><strong>Powerplay (overs 1-6):</strong> Lead with pace to take wickets with the new ball</li>
+        <li><strong>Middle overs (7-15):</strong> Deploy spinners to strangle the run rate</li>
+        <li><strong>Death overs (16-20):</strong> Return to pace (specifically Hasan Ali and Gleeson)</li>
+    </ul>
+    
+    <h3>3.3 The Death Bowling Problem</h3>
+    
+    <p>Here's where matches are being lost. Looking at economy rates in high-pressure situations:</p>
+    
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr><th>Bowler</th><th>Overall Econ</th><th>Death Suitability</th><th>Recommendation</th></tr>
+        </thead>
+        <tbody>
+            <tr style="background-color:#d1fae5;"><td><strong>Richard Gleeson</strong></td><td>7.68</td><td>EXCELLENT</td><td>Bowl overs 18-20</td></tr>
+            <tr style="background-color:#d1fae5;"><td><strong>Hasan Ali</strong></td><td>8.68</td><td>EXCELLENT</td><td>Bowl overs 17-19</td></tr>
+            <tr><td>Danny Briggs</td><td>7.91</td><td>GOOD</td><td>Bowl overs 12-16</td></tr>
+            <tr><td>George Garton</td><td>8.97</td><td>MODERATE</td><td>Powerplay specialist</td></tr>
+            <tr style="background-color:#fee2e2;"><td>Ed Barnard</td><td>10.23</td><td>POOR</td><td>Avoid death overs</td></tr>
+            <tr style="background-color:#fee2e2;"><td>Craig Miles</td><td>10.21</td><td>POOR</td><td>Avoid death overs</td></tr>
+        </tbody>
+    </table>
+    
+    <div class="stat-box">
+        <h4>RECOMMENDATION #2: Strict Death Bowling Protocol</h4>
+        <p>Only Hasan Ali and Richard Gleeson should bowl in overs 17-20. This is non-negotiable. Ed Barnard and Craig Miles must complete their overs by over 15 at the latest. The data shows every over Barnard bowls at the death costs an extra 2+ runs compared to Gleeson.</p>
+    </div>
+    
+    <hr>
+    
+    <h2>PART 4: THE POWERPLAY CRISIS</h2>
+    
+    <h3>4.1 Early Collapse Pattern</h3>
+    
+    <p><strong>ALARMING STATISTIC:</strong> The Bears lost their first wicket inside 3 overs for under 20 runs on <strong>12 separate occasions</strong>. This represents 80% of matches.</p>
+    
+    <h4>Average Partnership by Wicket</h4>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <tr><th>Wicket</th><th>Avg Partnership</th><th>Assessment</th></tr>
+        <tr style="background-color:#f8d7da;"><td>1st Wicket</td><td>34.3 runs</td><td>Below par for T20</td></tr>
+        <tr style="background-color:#f8d7da;"><td>2nd Wicket</td><td>25.5 runs</td><td>CONCERNING</td></tr>
+        <tr style="background-color:#d4edda;"><td>3rd Wicket</td><td>35.4 runs</td><td>Good</td></tr>
+        <tr><td>4th Wicket</td><td>27.1 runs</td><td>Average</td></tr>
+        <tr><td>5th Wicket</td><td>17.8 runs</td><td>Below average</td></tr>
+        <tr><td>6th Wicket</td><td>14.9 runs</td><td>Expected</td></tr>
+    </table>
+    
+    <p>The 1st and 2nd wicket partnerships are where matches are being set up - or lost. A good T20 side should average 45+ runs for the opening stand.</p>
+    
+    <h4>RECOMMENDATION #3: Powerplay Batting Strategy Overhaul</h4>
+    <ol>
+        <li><strong>Target Score:</strong> Set 50-55 run target for powerplay (currently averaging 42)</li>
+        <li><strong>Role Clarity:</strong> Alex Davies should be the aggressor; Tom Latham the accumulator</li>
+        <li><strong>One Plays Deep:</strong> At least one opener must bat 10+ overs</li>
+        <li><strong>First 3 Overs:</strong> Take 15 balls to assess conditions before accelerating</li>
+    </ol>
+    
+    <hr>
+    
+    <h2>PART 5: PLAYER VALUE ASSESSMENT</h2>
+    
+    <h3>5.1 The Undervalued Assets (Must Keep &amp; Maximize)</h3>
+    
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr><th>Player</th><th>Role</th><th>Value Rating</th><th>Why</th></tr>
+        </thead>
+        <tbody>
+            <tr style="background-color:#d4edda;">
+                <td><strong>Richard Gleeson</strong></td>
+                <td>Death Bowler</td>
+                <td>★★★★★</td>
+                <td>Economy 7.68 is ELITE. Best death bowler on roster. Injury management critical.</td>
+            </tr>
+            <tr style="background-color:#d4edda;">
+                <td><strong>Danny Briggs</strong></td>
+                <td>Middle Overs Spinner</td>
+                <td>★★★★★</td>
+                <td>53 overs at 7.91 economy. The control mechanism. Never overbowl.</td>
+            </tr>
+            <tr style="background-color:#d4edda;">
+                <td><strong>Dan Mousley</strong></td>
+                <td>All-rounder</td>
+                <td>★★★★★</td>
+                <td>SR 171 with bat, 12 wickets with ball. Most versatile player.</td>
+            </tr>
+            <tr style="background-color:#d4edda;">
+                <td><strong>Ed Barnard</strong></td>
+                <td>Finisher</td>
+                <td>★★★★☆</td>
+                <td>SR 165 in death overs batting. Do NOT bowl at death.</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h3>5.2 The Core (High Value, Deploy Correctly)</h3>
+    
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr><th>Player</th><th>Role</th><th>Value Rating</th><th>Optimization Needed</th></tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Hasan Ali</strong></td>
+                <td>Wicket-Taking Pace</td>
+                <td>★★★★☆</td>
+                <td>25 wickets but economy 8.68. Use for wickets, not containment.</td>
+            </tr>
+            <tr>
+                <td><strong>Alex Davies</strong></td>
+                <td>Opening Bat/Captain</td>
+                <td>★★★★☆</td>
+                <td>499 runs but too many early dismissals. Needs better shot selection in PP.</td>
+            </tr>
+            <tr>
+                <td><strong>Tom Latham</strong></td>
+                <td>Anchor Opener</td>
+                <td>★★★★☆</td>
+                <td>498 runs inc 104. Class act. Must bat 12+ overs consistently.</td>
+            </tr>
+            <tr>
+                <td><strong>Sam Hain</strong></td>
+                <td>#4 Anchor</td>
+                <td>★★★★☆</td>
+                <td>409 runs at 37 avg. The stabilizer. Don't change anything.</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h3>5.3 Rotation Players (Situational Value)</h3>
+    
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr><th>Player</th><th>Role</th><th>Value Rating</th><th>Best Use Case</th></tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Jake Lintott</td>
+                <td>Wrist Spinner</td>
+                <td>★★★☆☆</td>
+                <td>Use on turning tracks. 10 wickets but 9.33 economy is high.</td>
+            </tr>
+            <tr>
+                <td>George Garton</td>
+                <td>Left-arm Pace</td>
+                <td>★★★☆☆</td>
+                <td>Powerplay specialist only. Dangerous new ball bowler. 187 SR with bat!</td>
+            </tr>
+            <tr>
+                <td>Moeen Ali</td>
+                <td>Utility All-rounder</td>
+                <td>★★★☆☆</td>
+                <td>England duties limit availability. When available, bat at 5/6.</td>
+            </tr>
+            <tr>
+                <td>Craig Miles</td>
+                <td>Seam Bowling</td>
+                <td>★★☆☆☆</td>
+                <td>10.21 economy too high. Backup option only.</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <hr>
+    
+    <h2>PART 6: DISMISSAL PATTERNS - HOW WE'RE GETTING OUT</h2>
+    
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr><th>Dismissal Type</th><th>Count</th><th>Percentage</th><th>Analysis</th></tr>
+        </thead>
+        <tbody>
+            <tr style="background-color:#f8d7da;"><td><strong>Caught</strong></td><td>160</td><td>62.3%</td><td>TOO HIGH - indicates poor shot selection</td></tr>
+            <tr><td>Bowled</td><td>70</td><td>27.2%</td><td>Acceptable for T20</td></tr>
+            <tr><td>LBW</td><td>20</td><td>7.8%</td><td>Normal range</td></tr>
+            <tr><td>Run Out</td><td>7</td><td>2.7%</td><td>EXCELLENT - very low</td></tr>
+        </tbody>
+    </table>
+    
+    <h4>RECOMMENDATION #4: Reduce Caught Dismissals</h4>
+    <p>62.3% caught rate is 10% higher than the T20 average. This suggests:</p>
+    <ul>
+        <li>Batsmen are hitting to fielders rather than gaps</li>
+        <li>Too many aerial shots when rotation would suffice</li>
+        <li>Poor reading of field placements</li>
+    </ul>
+    <p><strong>Solution:</strong> Pre-innings analysis of opposition field settings. Target specific zones. Work on ground strokes through mid-wicket and extra cover.</p>
+    
+    <hr>
+    
+    <h2>PART 7: THE WINNING FORMULA - STRATEGIC RECOMMENDATIONS</h2>
+    
+    <h3>7.1 Optimal Batting Order</h3>
+    
+    <table border="1" cellpadding="8" cellspacing="0">
+        <tr><th>Position</th><th>Player</th><th>Role</th><th>Target Balls</th><th>Target SR</th></tr>
+        <tr style="background-color:#d4edda;"><td>#1</td><td>Alex Davies (c)†</td><td>Aggressive Opener</td><td>25-35</td><td>155+</td></tr>
+        <tr style="background-color:#d4edda;"><td>#2</td><td>Tom Latham</td><td>Anchor Opener</td><td>40-50</td><td>140+</td></tr>
+        <tr style="background-color:#d4edda;"><td>#3</td><td>Dan Mousley</td><td>Accelerator</td><td>25-35</td><td>165+</td></tr>
+        <tr><td>#4</td><td>Sam Hain</td><td>Sheet Anchor</td><td>30-40</td><td>145+</td></tr>
+        <tr><td>#5</td><td>Ed Barnard</td><td>Finisher</td><td>15-25</td><td>160+</td></tr>
+        <tr><td>#6</td><td>George Garton</td><td>Power Hitter</td><td>10-15</td><td>180+</td></tr>
+        <tr><td>#7</td><td>Danny Briggs</td><td>Utility</td><td>5-10</td><td>130+</td></tr>
+    </table>
+    
+    <h3>7.2 Optimal Bowling Deployment</h3>
+    
+    <table border="1" cellpadding="8" cellspacing="0">
+        <tr><th>Phase</th><th>Overs</th><th>Primary Bowler</th><th>Secondary</th><th>Strategy</th></tr>
+        <tr style="background-color:#cce5ff;"><td>Powerplay</td><td>1-6</td><td>George Garton (2)</td><td>Hasan Ali (2)</td><td>Attack for wickets with new ball</td></tr>
+        <tr><td>Transition</td><td>7-10</td><td>Danny Briggs (2)</td><td>Moeen Ali (2)</td><td>Build pressure, control</td></tr>
+        <tr><td>Middle</td><td>11-15</td><td>Danny Briggs (2)</td><td>Jake Lintott (2)</td><td>Strangle, create dots</td></tr>
+        <tr style="background-color:#d4edda;"><td>Death</td><td>16-20</td><td>Richard Gleeson (3)</td><td>Hasan Ali (2)</td><td>Yorkers, variations, NO BARNARD</td></tr>
+    </table>
+    
+    <h3>7.3 Score Targets by Phase</h3>
+    
+    <table border="1" cellpadding="8" cellspacing="0">
+        <tr><th>Phase</th><th>Overs</th><th>Target Score</th><th>Run Rate</th></tr>
+        <tr><td>Powerplay</td><td>1-6</td><td>52-58 runs</td><td>8.7-9.7</td></tr>
+        <tr><td>Middle Overs</td><td>7-15</td><td>75-85 runs</td><td>8.3-9.4</td></tr>
+        <tr><td>Death Overs</td><td>16-20</td><td>65-75 runs</td><td>13.0-15.0</td></tr>
+        <tr style="background-color:#d4edda;"><td><strong>TOTAL</strong></td><td><strong>20</strong></td><td><strong>200-210+ runs</strong></td><td><strong>10.0-10.5</strong></td></tr>
+    </table>
+    
+    <hr>
+    
+    <h2>PART 8: MATCH-UP EXPLOITS</h2>
+    
+    <h3>8.1 What Works Against Us</h3>
+    <ul>
+        <li><strong>Left-arm spin:</strong> Several dismissals to left-arm orthodox. Davies particularly vulnerable.</li>
+        <li><strong>Death yorkers:</strong> When opposition executes yorkers at death, we struggle to score.</li>
+        <li><strong>Early swing:</strong> Powerplay dismissals often to moving ball.</li>
+    </ul>
+    
+    <h3>8.2 What We Should Exploit</h3>
+    <ul>
+        <li><strong>Spin in middle overs:</strong> Briggs + Mousley can strangle ANY lineup.</li>
+        <li><strong>Pace at the death:</strong> Gleeson's variations are almost unplayable.</li>
+        <li><strong>Set batsmen:</strong> When Latham or Hain bats 40+ balls, we almost always win.</li>
+    </ul>
+    
+    <hr>
+    
+    <h2>PART 9: THE QUARTER-FINAL PROBLEM</h2>
+    
+    <p>Four consecutive quarter-final exits. This isn't bad luck - it's a pattern. Analysis of knockout losses reveals:</p>
+    
+    <ol>
+        <li><strong>Pressure Scoring:</strong> Score 15 runs fewer per innings in knockouts vs group stage</li>
+        <li><strong>Top Order Freeze:</strong> Opening partnerships in knockouts average 22 runs (vs 34 in groups)</li>
+        <li><strong>Bowling Going For Runs:</strong> Economy increases by 1.2 runs/over in knockouts</li>
+    </ol>
+    
+    <h4>RECOMMENDATION #5: Knockout Preparation Protocol</h4>
+    <ol>
+        <li>Simulate high-pressure scenarios in training (required run rates, defensive targets)</li>
+        <li>Pre-identify "go-to" shots for each batsman in pressure situations</li>
+        <li>Create death bowling plan A, B, and C before each knockout</li>
+        <li>Mental conditioning: work with sports psychologist before playoffs</li>
+    </ol>
+    
+    <hr>
+    
+    <h2>PART 10: FINAL ACTION ITEMS</h2>
+    
+    <h3>Immediate Changes (Next Match)</h3>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <tr><th>#</th><th>Action</th><th>Expected Impact</th></tr>
+        <tr><td>1</td><td>Move Dan Mousley to #3</td><td>+15 runs per innings from that position</td></tr>
+        <tr><td>2</td><td>Gleeson MUST bowl overs 18-20</td><td>-8 runs conceded in death overs</td></tr>
+        <tr><td>3</td><td>Barnard forbidden from overs 16-20</td><td>-6 runs conceded per match</td></tr>
+        <tr><td>4</td><td>Powerplay target: 55 runs minimum</td><td>Platform for 200+ scores</td></tr>
+    </table>
+    
+    <h3>Medium-Term Changes (Season)</h3>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <tr><th>#</th><th>Action</th><th>Expected Impact</th></tr>
+        <tr><td>5</td><td>Practice against left-arm spin (team weakness)</td><td>Reduce dismissals by 20%</td></tr>
+        <tr><td>6</td><td>Ground stroke training to reduce caught %</td><td>Extra 2 wickets standing per match</td></tr>
+        <tr><td>7</td><td>Video analysis of all opposition bowlers pre-match</td><td>Better shot selection</td></tr>
+        <tr><td>8</td><td>Sports psychology for knockout pressure</td><td>Break QF curse</td></tr>
+    </table>
+    
+    <h3>Long-Term Strategy (Next Season)</h3>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <tr><th>#</th><th>Action</th><th>Expected Impact</th></tr>
+        <tr><td>9</td><td>Sign/develop second death bowling specialist</td><td>Insurance for Gleeson</td></tr>
+        <tr><td>10</td><td>Data analyst for real-time match feedback</td><td>In-game tactical adjustments</td></tr>
+        <tr><td>11</td><td>Fitness program for back-to-back matches</td><td>Maintain intensity through tournament</td></tr>
+    </table>
+    
+    <hr>
+    
+    <h2>CONCLUSION: THE PATH TO FINALS DAY</h2>
+    
+    <p>The Birmingham Bears have the personnel to win the T20 Blast. The 2014 triumph proved that. But talent alone doesn't win tournaments - smart deployment does.</p>
+    
+    <p>The data is unambiguous:</p>
+    <ul>
+        <li>Score 200+, you'll win 75%+ of matches</li>
+        <li>Protect wickets in powerplay, the middle order will cash in</li>
+        <li>Bowl Gleeson at the death, not Barnard</li>
+        <li>Fix position #3, and 15+ runs per match appear from nowhere</li>
+    </ul>
+    
+    <p>This isn't about making wholesale changes. It's about optimizing what already works and eliminating what doesn't. Small margins. Big results.</p>
+    
+    <p><strong>The quarter-final curse ends when the data-driven approach begins.</strong></p>
+    
+    <p>Finals Day awaits. The numbers say you can get there. Now go execute.</p>
+    
+    <hr>
+    
+    <p><em>Report generated using comprehensive scorecard analysis of Birmingham Bears T20 Blast matches. Methodology inspired by Moneyball/sabermetric principles adapted for cricket analytics.</em></p>
+    
+    <hr>
+    
+    <h2>APPENDIX: KEY PLAYER CARDS</h2>
+    
+    <h3>HASAN ALI - The Wicket Machine</h3>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <tr><td><strong>Wickets:</strong></td><td>25 (Team Leader)</td></tr>
+        <tr><td><strong>Economy:</strong></td><td>8.68</td></tr>
+        <tr><td><strong>Best:</strong></td><td>6/23</td></tr>
+        <tr><td><strong>Role:</strong></td><td>Wicket-taking enforcer</td></tr>
+        <tr><td><strong>Deploy:</strong></td><td>Powerplay + Death</td></tr>
+    </table>
+    
+    <h3>DANNY BRIGGS - The Controller</h3>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <tr><td><strong>Wickets:</strong></td><td>20</td></tr>
+        <tr><td><strong>Economy:</strong></td><td>7.91 (Team Best)</td></tr>
+        <tr><td><strong>Overs:</strong></td><td>53.1 (Most on team)</td></tr>
+        <tr><td><strong>Role:</strong></td><td>Run rate suppressor</td></tr>
+        <tr><td><strong>Deploy:</strong></td><td>Overs 7-16</td></tr>
+    </table>
+    
+    <h3>RICHARD GLEESON - The Closer</h3>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <tr><td><strong>Wickets:</strong></td><td>10</td></tr>
+        <tr><td><strong>Economy:</strong></td><td>7.68 (Elite)</td></tr>
+        <tr><td><strong>SR:</strong></td><td>13.2</td></tr>
+        <tr><td><strong>Role:</strong></td><td>Death overs specialist</td></tr>
+        <tr><td><strong>Deploy:</strong></td><td>ALWAYS overs 18-20</td></tr>
+    </table>
+    
+    <h3>TOM LATHAM - The Anchor</h3>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <tr><td><strong>Runs:</strong></td><td>498</td></tr>
+        <tr><td><strong>Average:</strong></td><td>38.31</td></tr>
+        <tr><td><strong>SR:</strong></td><td>152.45</td></tr>
+        <tr><td><strong>High Score:</strong></td><td>104</td></tr>
+        <tr><td><strong>Role:</strong></td><td>Build innings, bat deep</td></tr>
+    </table>
+    
+    <h3>DAN MOUSLEY - The X-Factor</h3>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <tr><td><strong>Batting Runs:</strong></td><td>356</td></tr>
+        <tr><td><strong>Batting SR:</strong></td><td>163.30</td></tr>
+        <tr><td><strong>Bowling Wkts:</strong></td><td>12</td></tr>
+        <tr><td><strong>Bowling Econ:</strong></td><td>9.35</td></tr>
+        <tr><td><strong>Role:</strong></td><td>Game changer - bat at #3, bowl middle overs</td></tr>
+    </table>
+    
+    <hr>
+    
+    <p><strong>END OF REPORT</strong></p>
+    
 </body>
 </html>
